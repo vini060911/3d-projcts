@@ -13,17 +13,23 @@ camera.position.z = 5;
 const animate = function () {
   requestAnimationFrame( animate );
 
-	esfera.rotation.y += Math.PI/360;
+  esfera.rotation.y += Math.PI/360;
 
-	renderer.render( scene, camera );
+  renderer.render( scene, camera );
 };
-
-animate();
+const stop = function () {
+	console.log("Stop.")
+};
+var bool_state = false
 document.getElementById("enviar").addEventListener("click", () => {
-  function ctrAnim(data) {
-    esfera.rotation.y += Math.PI/360;
-
-	  renderer.render( scene, camera );
-  }
-	ctrAnim
-})
+	bool_state = !bool_state
+	switch(bool_state) {
+		case true:
+		     animate();
+		break;
+			
+		case false:
+		     stop();
+		break;
+	}
+});
