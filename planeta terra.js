@@ -5,7 +5,6 @@ cena = new THREE.TextureLoader().load( 'https://th.bing.com/th/id/R.e2c5c17b50b1
 material = new THREE.MeshBasicMaterial( { map: textura } ),
 esfera = new THREE.Mesh( geometry, material )
 
-scene.add( esfera )
 scene.background = cena
 
 camera.position.z = 5;
@@ -19,13 +18,14 @@ const animate = function () {
 };
 const stop = function () {
 	console.log("Stop.")
-	window.stop();
+	scene.remove( s )
 };
 var bool_state = false
 document.getElementById("enviar").addEventListener("click", () => {
 	bool_state = !bool_state
 	switch(bool_state) {
 		case true:
+		     scene.add( esfera )
 		     animate();
 		break;
 			
