@@ -19,6 +19,7 @@ const animate = function () {
 };
 const stop = function () {
 	console.log("Stop.")
+	window.stop();
 };
 var bool_state = false
 document.getElementById("enviar").addEventListener("click", () => {
