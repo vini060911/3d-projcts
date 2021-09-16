@@ -18,7 +18,7 @@ const animate = function () {
 };
 const stop = function () {
 	console.log("Stop.")
-	scene.remove( s )
+	scene.remove( esfera )
 };
 var bool_state = false
 document.getElementById("enviar").addEventListener("click", () => {
